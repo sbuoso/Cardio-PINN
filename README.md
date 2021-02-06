@@ -45,6 +45,9 @@ sample them between the limits of the values observed in the original dataset.
         . e_t = local transmural direction vector
 
 # PINN training and simulation:
+
+Run `CardioPINN.py` to train a PINN on a selected left-ventricular anatomy and simulate the corresponding cardiac function when coupled with a simplified systemic circulation model 
+
 **Input data**:
 
     - cases_folder      : path to case folder
