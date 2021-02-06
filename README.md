@@ -12,10 +12,8 @@ The scripts in this repository allow to:
 
 # Synthetic shape generation:
 
-Synthetic shapes can be generated running the script Generate_shapes.py
-The shape model is consists of bases obtained applying Proper Orthogonal Decomposition
-(POD) to a dataset of anatomies. New shapes can be generated as a linear combination
-of the bases. It is possible to specify directly the ampitudes of the bases or randomly
+Run `Generate_shapes.py` to generate a new synthetic shape using the shape model.
+It is possible to specify directly the ampitudes of the bases or randomly
 sample them between the limits of the values observed in the original dataset.
 
 **Input data**:
