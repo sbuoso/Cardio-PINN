@@ -10,6 +10,29 @@ The scripts in this repository allow to:
 * Generate a synthetic left-ventricular anatomy and the corresponding parametrization using a shape model
 * Train a PINN on a specific anatomy and run a simulation of left-ventricular function coupling the PINN to a 0D-circulation model. 
 
+The repository contains:
+
+* Shape model folder: it containts the bases defining the left-ventricular shape model, the range of the amplitudes for each basis in the training dataset and a vtk of the average anatomy with anatomical labels and physiological parametrization.
+* Functional model folder: it contanins the bases defining the functional model and the ampitudes range for each basis obtained on a synthetic training dataset generated with a biophysical finite element model. 
+* Generate_shapes.py: script for the generation of synthetic anatomies using the shape model
+* CardioPINN.py: script for the training of a PINN on a selected left-ventricula anatomy and the simulation of the corresponding cardiac function when coupled with a systemic circulation model.
+* DeepCardioFunctions.py: used defined functions for the CardioPINN.py script.
+
+**Prerequisites**:
+Scripts are tested with python version 3.5 and tensorflow version 1.10. To use the scripts you will need the following:
+
+* Numpy
+* Matplotlib
+* Tensorflow
+* Scipy
+* Vtk
+
+You can create the anaconda environment with the following sequence of commands
+
+`conda create -n CardioPINN matplotlib scipy vtk ipython numpy`
+`conda activate CardioPINN`
+`conda install -c conda-forge tensorflow=1.10 `
+
 # Synthetic shape generation:
 
 Run `Generate_shapes.py` to generate a new synthetic shape using the shape model.
@@ -77,14 +100,5 @@ Run `CardioPINN.py` to train a PINN on a selected left-ventricular anatomy and s
     - epochs        : number of training epocs
     - d_param       : number of points for tensor sampling of tuples (p_endo,T_a)  
     - learn_rate    : learning rate
-
-**Set up of the simulation environment**:
-Scripts are tested with python version 3.5 and tensorflow version 1.10
-
-You can create the anaconda environment with the following sequence of commands
-
-`conda create -n CardioPINN matplotlib scipy vtk ipython numpy`
-`conda activate CardioPINN`
-`conda install -c conda-forge tensorflow=1.10 `
 
 The code is developed by Dr. Stefano Buoso `buoso@biomed.ee.ethz.ch` [Cardiac Magnetic Resonance group](http://www.cmr.ethz.ch/), Institute for Biomedical Engineering, ETH Zurich, University of Zurich.
