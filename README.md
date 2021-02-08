@@ -15,7 +15,7 @@ The repository contains:
 * Shape model folder: it containts the bases defining the left-ventricular shape model, the range of the amplitudes for each basis in the training dataset and a vtk of the average anatomy with anatomical labels and physiological parametrization.
 * Functional model folder: it contanins the bases defining the functional model and the ampitudes range for each basis obtained on a synthetic training dataset generated with a biophysical finite element model. 
 * Generate_shapes.py: script for the generation of synthetic anatomies using the shape model
-* CardioPINN.py: script for the training of a PINN on a selected left-ventricula anatomy and the simulation of the corresponding cardiac function when coupled with a systemic circulation model.
+* CardioPINN.py: script for the training of a PINN on a selected left-ventricula anatomy and the simulation of the corresponding cardiac function when coupled to a 0D-circulation model. 
 * DeepCardioFunctions.py: used defined functions for the CardioPINN.py script.
 
 **Prerequisites**:
@@ -30,7 +30,9 @@ Scripts are tested with python version 3.5 and tensorflow version 1.10. To use t
 You can create the anaconda environment with the following sequence of commands
 
 `conda create -n CardioPINN matplotlib scipy vtk ipython numpy`
+
 `conda activate CardioPINN`
+
 `conda install -c conda-forge tensorflow=1.10 `
 
 # Synthetic shape generation:
@@ -73,7 +75,7 @@ Run `CardioPINN.py` to train a PINN on a selected left-ventricular anatomy and s
 
 **Input data**:
 
-    - cases_folder      : path to case folder
+    - cases_folder      : path to case folder (possibly the output folder of Generate_shapes.py)
     - case_name         : case name
     - endo_fiber_angle  : helix angle at endocardium [deg]
     - epi_fiber_angle   : helix angle at epicardium [deg]
@@ -100,5 +102,12 @@ Run `CardioPINN.py` to train a PINN on a selected left-ventricular anatomy and s
     - epochs        : number of training epocs
     - d_param       : number of points for tensor sampling of tuples (p_endo,T_a)  
     - learn_rate    : learning rate
+
+# Usage example:
+After setting all input parameters described, PINN can be trained on a synthetic anatomy generated using the shape model as:
+
+`python Generate_shapes.py`
+
+`python CardioPINN.py`
 
 The code is developed by Dr. Stefano Buoso `buoso@biomed.ee.ethz.ch` [Cardiac Magnetic Resonance group](http://www.cmr.ethz.ch/), Institute for Biomedical Engineering, ETH Zurich, University of Zurich.
