@@ -3,7 +3,7 @@
 **Cardio-PINN** is a framework to generate personalised functional left ventricular modes with physics informed
 neural networks (PINN) as described in 
 
-Buoso S, Joyce T and Kozerke S (2021) 'Personalising left-ventricular biophysical models of the heart using parametric physics-informed neural networks', Medical Image Analysis, xx, xx, xx,. Please cite this work if you use this framework, or part of it such as the PINN setup, shape model, ...
+Buoso S, Joyce T and Kozerke S (2021) 'Personalising left-ventricular biophysical models of the heart using parametric physics-informed neural networks', Medical Image Analysis, doi.org/10.1016/j.media.2021.102066. Please cite this work if you use this framework, or part of it such as the PINN setup, shape model, ...
 
 The scripts in this repository allow to:
 
